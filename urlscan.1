@@ -129,6 +129,19 @@ Exit urlscan after opening or copying a single browser link.
 .B \-w, \-\-width
 Set display width.
 .TP
+.B \-E, \-\-regex \<expression\>
+Use \<expression\> in place of the default set of regular expressions,
+to be used for any kind of matching. This is useful for example when
+selectively avoiding 'mailto:' links or any other pattern that urlscan
+could interpret as urls (such as '<filename>.<extension>'). Usage
+example:
+
+    $ urlscan --regex 'https?://.+\.\\w+' file.txt
+.TP
+.B \-\-headers
+Scan email headers for URLs.
+
+.TP
 .B \-W, \-\-whitespace-off
 Suppress output of blank lines and ellipses lines.
 
